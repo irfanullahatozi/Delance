@@ -16,8 +16,10 @@ const App: React.FC = () => {
   const [walletAddress, setWalletAddress] = useState<string>("")
 
   const provider = new ethers.providers.Web3Provider((window as any).ethereum)
-  // const signer = provider.getSigner();
+  const signer = provider.getSigner();
   const contractAddress: string = "0xcf9fa2f9aebd698d7ad56f3fa3e5920efb947779"
+
+  console.log("Signer", signer)
 
   useEffect(() => {
     connectWallet();
